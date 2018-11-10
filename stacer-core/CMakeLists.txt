@@ -5,6 +5,7 @@ include_directories(
   "${CMAKE_CURRENT_SOURCE_DIR}"
   "${CMAKE_CURRENT_SOURCE_DIR}/Info"
   "${CMAKE_CURRENT_SOURCE_DIR}/Tools"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Types"
   "${CMAKE_CURRENT_SOURCE_DIR}/Utils"
 )
 
