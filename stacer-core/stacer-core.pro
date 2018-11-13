@@ -64,5 +64,7 @@ HEADERS += \
 
 unix {
     target.path = /usr/lib
+    LIBS     += $$[PCRECPP_LIBRARIES]
+    INCLUDEPATH += $$[PCRECPP_INCLUDE_DIRS]
     INSTALLS += target
 }
