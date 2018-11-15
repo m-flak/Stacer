@@ -1,5 +1,6 @@
 Stacer.pro.*
 stacer-core/stacer-core.pro.user
+stacer/stacer.pro.user
 dist/
 build/
 #*.AppImage
