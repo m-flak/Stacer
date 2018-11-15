@@ -51,7 +51,29 @@ SOURCES += \
     Pages/AptSourceManager/apt_source_edit.cpp \
     Managers/setting_manager.cpp \
     sliding_stacked_widget.cpp \
-    signal_mapper.cpp
+    signal_mapper.cpp \
+    Pages/AptSourceManager/apt_source_edit.cpp \
+    Pages/AptSourceManager/apt_source_manager_page.cpp \
+    Pages/AptSourceManager/apt_source_repository_item.cpp \
+    Pages/Dashboard/circlebar.cpp \
+    Pages/Dashboard/dashboard_page.cpp \
+    Pages/Dashboard/linebar.cpp \
+    Pages/GnomeSettings/appearance_settings.cpp \
+    Pages/GnomeSettings/gnome_settings_page.cpp \
+    Pages/GnomeSettings/unity_settings.cpp \
+    Pages/GnomeSettings/window_manager_settings.cpp \
+    Pages/Processes/processes_page.cpp \
+    Pages/Resources/history_chart.cpp \
+    Pages/Resources/resources_page.cpp \
+    Pages/Services/service_item.cpp \
+    Pages/Services/services_page.cpp \
+    Pages/Settings/settings_page.cpp \
+    Pages/StartupApps/startup_app.cpp \
+    Pages/StartupApps/startup_app_edit.cpp \
+    Pages/StartupApps/startup_apps_page.cpp \
+    Pages/SystemCleaner/system_cleaner_page.cpp \
+    Pages/Uninstaller/uninstaller_page.cpp \
+    Pages/AdvancedInfo/advanced_info_page.cpp
 
 HEADERS += \
     app.h \
@@ -83,7 +105,29 @@ HEADERS += \
     feedback.h \
     Pages/AptSourceManager/apt_source_edit.h \
     Managers/setting_manager.h \
-    signal_mapper.h
+    signal_mapper.h \
+    Pages/AptSourceManager/apt_source_edit.h \
+    Pages/AptSourceManager/apt_source_manager_page.h \
+    Pages/AptSourceManager/apt_source_repository_item.h \
+    Pages/Dashboard/circlebar.h \
+    Pages/Dashboard/dashboard_page.h \
+    Pages/Dashboard/linebar.h \
+    Pages/GnomeSettings/appearance_settings.h \
+    Pages/GnomeSettings/gnome_settings_page.h \
+    Pages/GnomeSettings/unity_settings.h \
+    Pages/GnomeSettings/window_manager_settings.h \
+    Pages/Processes/processes_page.h \
+    Pages/Resources/history_chart.h \
+    Pages/Resources/resources_page.h \
+    Pages/Services/service_item.h \
+    Pages/Services/services_page.h \
+    Pages/Settings/settings_page.h \
+    Pages/StartupApps/startup_app.h \
+    Pages/StartupApps/startup_app_edit.h \
+    Pages/StartupApps/startup_apps_page.h \
+    Pages/SystemCleaner/system_cleaner_page.h \
+    Pages/Uninstaller/uninstaller_page.h \
+    Pages/AdvancedInfo/advanced_info_page.h
 
 FORMS += \
     app.ui \
@@ -108,7 +152,8 @@ FORMS += \
     Pages/GnomeSettings/window_manager_settings.ui \
     Pages/GnomeSettings/appearance_settings.ui \
     feedback.ui \
-    Pages/AptSourceManager/apt_source_edit.ui
+    Pages/AptSourceManager/apt_source_edit.ui \
+    Pages/AdvancedInfo/advanced_info_page.ui
 
 TRANSLATIONS += \
     ../translations/stacer_ar.ts \

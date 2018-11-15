@@ -11,6 +11,7 @@
 #include "Pages/Dashboard/dashboard_page.h"
 #include "Pages/StartupApps/startup_apps_page.h"
 #include "Pages/SystemCleaner/system_cleaner_page.h"
+#include "Pages/AdvancedInfo/advanced_info_page.h"
 #include "Pages/Services/services_page.h"
 #include "Pages/Processes/processes_page.h"
 #include "Pages/Uninstaller/uninstaller_page.h"
@@ -42,6 +43,7 @@ private slots:
 
     void on_btnDash_clicked();
     void on_btnSystemCleaner_clicked();
+    void on_btnAdvancedInfo_clicked();
     void on_btnStartupApps_clicked();
     void on_btnServices_clicked();
     void on_btnUninstaller_clicked();
@@ -71,6 +73,7 @@ private:
     DashboardPage *dashboardPage;
     StartupAppsPage *startupAppsPage;
     SystemCleanerPage *systemCleanerPage;
+    AdvancedInfoPage *advancedInfoPage;
     ServicesPage *servicesPage;
     ProcessesPage *processPage;
     UninstallerPage *uninstallerPage;

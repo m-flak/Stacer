@@ -34,6 +34,7 @@ void App::init()
     dashboardPage = new DashboardPage(mSlidingStacked);
     startupAppsPage = new StartupAppsPage(mSlidingStacked);
     systemCleanerPage = new SystemCleanerPage(mSlidingStacked);
+    advancedInfoPage  = new AdvancedInfoPage(mSlidingStacked);
     servicesPage = new ServicesPage(mSlidingStacked);
     processPage = new ProcessesPage(mSlidingStacked);
     uninstallerPage = new UninstallerPage(mSlidingStacked);
@@ -43,13 +44,13 @@ void App::init()
     ui->pageContentLayout->addWidget(mSlidingStacked);
 
     mListPages = {
-        dashboardPage, startupAppsPage, systemCleanerPage, servicesPage,
-        processPage, uninstallerPage, resourcesPage, settingsPage
+        dashboardPage, startupAppsPage, systemCleanerPage, advancedInfoPage,
+        servicesPage, processPage, uninstallerPage, resourcesPage, settingsPage
     };
 
     mListSidebarButtons = {
-        ui->btnDash, ui->btnStartupApps, ui->btnSystemCleaner, ui->btnServices,
-        ui->btnProcesses, ui->btnUninstaller, ui->btnResources, ui->btnSettings
+        ui->btnDash, ui->btnStartupApps, ui->btnSystemCleaner, ui->btnAdvancedInfo,
+        ui->btnServices, ui->btnProcesses, ui->btnUninstaller, ui->btnResources, ui->btnSettings
     };
 
     // APT SOURCE MANAGER
@@ -195,6 +196,11 @@ void App::on_btnStartupApps_clicked()
 void App::on_btnSystemCleaner_clicked()
 {
     pageClick(systemCleanerPage);
+}
+
+void App::on_btnAdvancedInfo_clicked()
+{
+    pageClick(advancedInfoPage);
 }
 
 void App::on_btnServices_clicked()
