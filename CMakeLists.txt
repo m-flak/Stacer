@@ -34,6 +34,10 @@ if ("${SYS_PLAT}" STREQUAL "Linux")
 	string(CONCAT PREFIX_LIBARCH_DIR SYS_ARCH "-linux-gnu")
 endif()
 
+# `make clean` doesn't remove the autogen directories LMAO
+# # ensure that it does
+set(ADDITIONAL_MAKE_CLEAN_FILES "${PROJECT_ROOT}/stacer/stacer_autogen/*.*" "${PROJECT_ROOT}/stacer-core/stacer-core_autogen/*.*")
+
 # Make target: `distclean` FOR REGENNING EVERYTHING
 ADD_CUSTOM_TARGET(distclean @echo clean for full remake) 
 ADD_CUSTOM_COMMAND(

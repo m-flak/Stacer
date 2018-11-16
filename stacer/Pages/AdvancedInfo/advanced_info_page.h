@@ -2,6 +2,8 @@
 #define ADVANCED_INFO_PAGE_H
 
 #include <QWidget>
+#include <QList>
+#include "Types/appentry.h"
 
 namespace Ui {
 class AdvancedInfoPage;
@@ -15,8 +17,18 @@ public:
     explicit AdvancedInfoPage(QWidget *parent = nullptr);
     ~AdvancedInfoPage();
 
+signals:
+    void signal_clearInstalledApps();
+
+private slots:
+    void init();
+    void refreshInstalledApps();
+    void clearInstalledApps();
+
 private:
     Ui::AdvancedInfoPage *ui;
+
+    QList<AppEntry*>     mInstalledApps;
 };
 
 #endif // ADVANCED_INFO_PAGE_H

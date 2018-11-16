@@ -990,3 +990,17 @@ QLabel[accessibleName="dialog-title"] {
     background-color: @pageContent;
 }
 
+/**************************
+    ADVANCED INFORMATION PAGE
+***************************/
+
+#lblInstalledApplications {
+    color: @color05;
+    font-size: 10pt;
+}
+
+#qcvInstalledApplications {
+    background-color: @color17;
+    border: 3px solid @sidebar;
+    
+}
