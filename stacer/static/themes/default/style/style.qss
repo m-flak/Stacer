@@ -999,8 +999,13 @@ QLabel[accessibleName="dialog-title"] {
     font-size: 10pt;
 }
 
+#AdvancedInfoPage QAbstractItemView:alternate {
+    background-color: @color18;
+}
+
 #qcvInstalledApplications {
     background-color: @color17;
     border: 3px solid @sidebar;
-    
+    margin: 2px;
 }
+
