@@ -41,7 +41,8 @@ SOURCES += \
     Info/process.cpp \
     Tools/apt_source_tool.cpp \
     Tools/gnome_settings_tool.cpp \
-    Types/appentry.cpp
+    Types/appentry.cpp \
+    Types/brokenapp.cpp
 
 HEADERS += \
         stacer-core_global.h \ 
@@ -60,7 +61,8 @@ HEADERS += \
     Tools/apt_source_tool.h \
     Tools/gnome_settings_tool.h \
     Tools/gnome_schema.h \
-    Types/appentry.h
+    Types/appentry.h \
+    Types/brokenapp.h
 
 unix {
     target.path = /usr/lib

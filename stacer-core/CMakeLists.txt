@@ -16,4 +16,4 @@ add_definitions(-DSTACERCORE_LIBRARY)
 find_package(Qt5  COMPONENTS  Core Network REQUIRED)
 
 add_library(${PROJECT_NAME}  STATIC  ${${PROJECT_NAME}_srcs})
-target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Network)
+target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Network ${PCRECPP_LIBRARIES})

@@ -9,6 +9,8 @@ AppEntry::AppEntry(QObject *parent) : QObject(parent)
    this->pretty_name 	= "";
    this->name	 	= "";
    this->install_prefix = "";
+   
+   init();
 }
 
 AppEntry::AppEntry(const AppEntry& other) : QObject(other.parent())
@@ -16,6 +18,8 @@ AppEntry::AppEntry(const AppEntry& other) : QObject(other.parent())
    this->pretty_name 	= other.pretty_name; 
    this->name	 	= other.name;
    this->install_prefix = other.install_prefix;
+
+   init();
 }
 
 bool AppEntry::operator ==(const AppEntry &B) const
@@ -113,3 +117,9 @@ void AppEntry::findPrefix(const QString& location, QString *prefix)
     
     this->install_prefix = *prefix;
 }
+
+void AppEntry::init()
+{
+    setObjectName("AppEntry");
+}
+
