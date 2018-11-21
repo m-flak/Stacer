@@ -1003,9 +1003,22 @@ QLabel[accessibleName="dialog-title"] {
     background-color: @color18;
 }
 
+#AdvancedInfoPage QPushButton {
+    background-color: @color17;
+    border: 1px solid @color19;
+}
+
+#AdvancedInfoPage QPushButton:pressed {
+    background-color: @color18;
+    border: none;
+}
+
+#btnRefreshTopCV {
+    qproperty-icon: url(:/static/themes/default/img/refresh.png);
+}
+
 #qcvInstalledApplications {
     background-color: @color17;
-    border: 3px solid @sidebar;
     margin: 2px;
 }
 

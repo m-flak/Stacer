@@ -2,6 +2,7 @@
 #define ADVANCED_INFO_PAGE_H
 
 #include <QWidget>
+#include <QStandardItemModel> 			
 #include <QList>
 #include "Types/appentry.h"
 
@@ -27,6 +28,8 @@ private slots:
 
 private:
     Ui::AdvancedInfoPage *ui;
+
+    QStandardItemModel   mItemModel;
 
     QList<AppEntry*>     mInstalledApps;
 };

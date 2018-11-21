@@ -27,7 +27,11 @@ AdvancedInfoPage::~AdvancedInfoPage()
 void AdvancedInfoPage::init()
 {
     connect(this, &AdvancedInfoPage::signal_clearInstalledApps, this, &AdvancedInfoPage::clearInstalledApps);
-
+    
+    QModelIndex qmi;
+    mItemModel.insertColumns(0, 3, qmi);
+    
+    ui->qcvInstalledApplications->setModel(&mItemModel);
 }
 
 void AdvancedInfoPage::refreshInstalledApps()
