@@ -44,7 +44,8 @@ SOURCES += \
     Types/Applications/command.cpp  \
     Types/Applications/desktop.cpp \
     Types/Applications/broken_app.cpp \
-    Types/command.cpp
+    Types/command.cpp \
+    Types/Dbus/sdbus_connection.cpp
 
 HEADERS += \
         stacer-core_global.h \ 
@@ -67,7 +68,8 @@ HEADERS += \
     Types/Applications/desktop.h \
     Types/Applications/broken_app.h \
     Types/metacallback.hpp \
-    Types/command.hpp
+    Types/command.hpp \
+    Types/Dbus/sdbus_connection.h
 
 unix {
     target.path = /usr/lib

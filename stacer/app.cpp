@@ -25,7 +25,11 @@ void App::init()
 {
     // get our base thread
     mAppThread = App::parentThread(reinterpret_cast<QObject*>(this));
- 
+    
+    // get our dbus connection
+    connect(&mDbusCon, SIGNAL(onAcquire()), this, SLOT(on_acquire_Dbus()));
+    mDbusCon.waitForBus(true, CONTYPE_SESSION);
+    
     setGeometry(
         QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter,
             size(), qApp->desktop()->availableGeometry())
@@ -153,6 +157,11 @@ void App::clickSidebarButton(QString pageTitle, bool isShow)
     }
     setVisible(isShow);
     if (isShow) activateWindow();
+}
+
+void App::on_acquire_Dbus()
+{
+    
 }
 
 void App::checkSidebarButtonByTooltip(const QString &text)

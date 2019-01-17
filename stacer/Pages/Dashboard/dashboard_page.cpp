@@ -139,7 +139,23 @@ void DashboardPage::updateCpuBar()
         }
     }
 
-    mCpuBar->setValue(cpuUsedPercent, QString("%1%").arg(cpuUsedPercent));
+    qint64 kids = mCpuBar->children().count();
+    qint64 pages = mCpuBar->numPages();
+
+    if (kids > 0 || (pages != 0 && pages >= 1))
+    {
+            for (auto *obj : mCpuBar->children())
+            {
+		if (obj->objectName() != "CircleBar")
+			continue;
+
+                qobject_cast<CircleBar*>(obj)->setValue(cpuUsedPercent, QString("%1%").arg(cpuUsedPercent));
+            }
+    }
+    else
+    {
+        mCpuBar->setValue(cpuUsedPercent, QString("%1%").arg(cpuUsedPercent));
+    }
 }
 
 void DashboardPage::updateMemoryBar()
@@ -168,9 +184,26 @@ void DashboardPage::updateMemoryBar()
         }
     }
 
-    mMemBar->setValue(memUsedPercent, QString("%1 / %2")
+    qint64 kids = mMemBar->children().count();
+    qint64 pages = mMemBar->numPages();
+
+    if (kids > 0 || (pages != 0 && pages >= 1))
+    {
+	    for (auto *obj : mMemBar->children())
+            {
+	    	if (obj->objectName() != "CircleBar")
+			continue;
+                qobject_cast<CircleBar*>(obj)->setValue(memUsedPercent, QString("%1 / %2")
+                                                        .arg(f_memUsed)
+                                                        .arg(f_memTotal));
+            }
+    }
+    else
+    {
+        mMemBar->setValue(memUsedPercent, QString("%1 / %2")
                      .arg(f_memUsed)
                      .arg(f_memTotal));
+    }
 }
 
 void DashboardPage::updateDiskBar()
@@ -215,9 +248,26 @@ void DashboardPage::updateDiskBar()
         QString sizeText = FormatUtil::formatBytes(disk->size);
         QString usedText = FormatUtil::formatBytes(disk->used);
 
-        mDiskBar->setValue(diskPercent, QString("%1 / %2")
+        qint64 kids = mDiskBar->children().count();
+        qint64 pages = mDiskBar->numPages();
+
+        if (kids > 0 || (pages != 0 && pages >= 1))
+        {
+                for (auto *obj : mDiskBar->children())
+                {
+		    if (obj->objectName() != "CircleBar")
+			continue;
+                    qobject_cast<CircleBar*>(obj)->setValue(diskPercent, QString("%1 / %2")
+                                                             .arg(usedText)
+                                                             .arg(sizeText));
+                }
+        }
+        else
+        {
+            mDiskBar->setValue(diskPercent, QString("%1 / %2")
                           .arg(usedText)
                           .arg(sizeText));
+        }
     }
 }
 

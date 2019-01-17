@@ -7,6 +7,8 @@
 #include "sliding_stacked_widget.h"
 #include "Managers/app_manager.h"
 #include "Managers/setting_manager.h"
+#include "Types/Dbus/sdbus_connection.h"
+
 
 // Config header
 #include "Stacer-cfg.h"
@@ -36,7 +38,7 @@ public:
     explicit App(QWidget *parent = 0);
     ~App();
 
-    static constexpr int maximumThreads() { return MAXIMUM_THREADS; }
+    static constexpr const int maximumThreads() { return MAXIMUM_THREADS; }
     static QThread*      parentThread(const QObject* inspect) { return inspect->thread(); }
 
 protected:
@@ -47,6 +49,8 @@ private slots:
     void pageClick(QWidget *widget, bool slide = true);
     void clickSidebarButton(QString pageTitle, bool isShow = false);
 
+    void on_acquire_Dbus();
+    
     void on_btnDash_clicked();
     void on_btnSystemCleaner_clicked();
     void on_btnStartupApps_clicked();
@@ -96,6 +100,8 @@ private:
     QMessageBox *mQuitMsgBox;
 
     QThread	*mAppThread;
+	
+	SDBusConnection mDbusCon;
 };
 
 #endif // APP_H

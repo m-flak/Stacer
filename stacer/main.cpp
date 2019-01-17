@@ -48,6 +48,12 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     }
 }
 
+int post_main(const QApplication *app)
+{
+
+    return app->exec();
+}
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
@@ -80,5 +86,5 @@ int main(int argc, char *argv[])
 
     delete splash;
 
-    return app.exec();
+    return post_main(&app);
 }
