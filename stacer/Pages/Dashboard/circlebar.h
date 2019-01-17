@@ -29,11 +29,13 @@ public:
 
 public slots:
     void setValue(const int &value, const QString &valueText);
+    void addPage(const QString &title);
 
 private slots:
     void init();
 
 signals:
+    void added_page(const QString &title, QWidget *parent, CircleBar *child);
     void change_page(const qint64 oldpg, qint64 newpg);
 
 private:

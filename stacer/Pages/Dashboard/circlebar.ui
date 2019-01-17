@@ -22,6 +22,9 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
+  <property name="PageTitles" stdset="0">
+   <stringlist/>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="spacing">
     <number>0</number>

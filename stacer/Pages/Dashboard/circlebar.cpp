@@ -21,6 +21,8 @@ CircleBar::CircleBar(const QString &title, const QStringList &colors, QWidget *p
 
     ui->lblCircleChartTitle->setText(title);
 
+    setObjectName("CircleBar");
+
     init();
 }
 
@@ -102,6 +104,23 @@ void CircleBar::init()
         mChartView->setBackgroundBrush(QColor(styleValues->value("@circleChartBackgroundColor").toString()));
         mSeries->slices().last()->setColor(styleValues->value("@pageContent").toString()); // trail color
     });
+
+    if(this->parent()->objectName() == "CircleBar")
+    {
+        decltype(this) p = qobject_cast<CircleBar*>(this->parent());
+        p->mPageList.append(this);
+
+        auto ppt = qvariant_cast<QStringList>(p->property("PageTitles"));
+        ppt.append(ui->lblCircleChartTitle->text());
+        this->setProperty("PageTitles", QVariant(ppt));
+    }
+    else
+    {
+        mPageList.append(this);
+        QStringList pt = QStringList({ui->lblCircleChartTitle->text()});
+        this->setProperty("PageTitles", QVariant(pt));
+    }
+
 }
 
 void CircleBar::setValue(const int &value, const QString &valueText)
@@ -110,6 +129,17 @@ void CircleBar::setValue(const int &value, const QString &valueText)
     mSeries->slices().last()->setValue(100 - value);
 
     ui->lblCircleChartValue->setText(valueText);
+}
+
+void CircleBar::addPage(const QString &title)
+{
+    CircleBar *child = new CircleBar(title, this->mColors, this);
+    const qint64 totalpg = this->numPages()+1;
+
+    this->setNumPages(totalpg);
+    child->setNumPages(totalpg);
+
+    emit added_page(title, this, child);
 }
 
 void CircleBar::mousePressEvent(QMouseEvent *event)
