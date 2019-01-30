@@ -10,6 +10,9 @@ cd "$SELF_BUILDIR"
 git clone --recursive --depth=1 https://github.com/emaballarin/Stacer.git
 
 cd Stacer
+
+./build-aux/build-sddp.sh
+
 mkdir build
 cd build
 
