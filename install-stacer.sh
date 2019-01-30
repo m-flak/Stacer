@@ -11,7 +11,7 @@ git clone --recursive --depth=1 https://github.com/emaballarin/Stacer.git
 
 cd Stacer
 
-./build-aux/build-sddp.sh
+./build-aux/build-sdpp.sh
 
 mkdir build
 cd build
